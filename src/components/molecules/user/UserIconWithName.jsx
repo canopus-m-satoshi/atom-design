@@ -4,11 +4,11 @@ import styled from "styled-components";
 import { UserContext } from "../../../providers/UserProvider";
 
 export const UserIconWithName = (props) => {
-  const { image, name, isAdmin } = props;
+  const { image, name } = props;
 
   // UseProvider内にあるUsercontentを引数として渡し、どのコンテキストの値かを判別している
-  const context = useContext(UserContext);
-  console.log(context);
+  const { userInfo } = useContext(UserContext);
+  const isAdmin = userInfo ? userInfo.isAdmin : false;
 
   return (
     <SContainer>
