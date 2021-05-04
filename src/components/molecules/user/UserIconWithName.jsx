@@ -1,7 +1,14 @@
+import { useContext } from "react";
+
 import styled from "styled-components";
+import { UserContext } from "../../../providers/UserProvider";
 
 export const UserIconWithName = (props) => {
   const { image, name, isAdmin } = props;
+
+  // UseProvider内にあるUsercontentを引数として渡し、どのコンテキストの値かを判別している
+  const context = useContext(UserContext);
+  console.log(context);
 
   return (
     <SContainer>
